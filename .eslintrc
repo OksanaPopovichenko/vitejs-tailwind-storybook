@@ -1,0 +1,54 @@
+{
+  "root": true,
+  "ignorePatterns": ["*.config.js", "*.config.ts", "testSetup.ts"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["tsconfig.json"],
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unsafe-assignment": "error",
+    "@typescript-eslint/no-unsafe-argument": "error",
+    "@typescript-eslint/no-unsafe-member-access": "error",
+    "@typescript-eslint/no-unsafe-call": "error",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/unbound-method": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "react/no-array-index-key": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.test.ts", "**/*.test.tsx", "**/testSetup.ts"]
+      }
+    ],
+    "no-console": [
+      2,
+      {
+        "allow": ["error"]
+      }
+    ]
+  },
+  "plugins": ["react", "@typescript-eslint"]
+}
